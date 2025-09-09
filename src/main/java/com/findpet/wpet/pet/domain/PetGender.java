@@ -16,9 +16,9 @@ public class PetGender {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "pet_gender", nullable = false)
-    PetGenderType gender;
+    PetGenderType genderType;
 
-    public PetGender(@NonNull PetGenderType gender) {
-        this.gender = gender;
+    public PetGender(@NonNull PetGenderType genderType) {
+        this.genderType = genderType;
     }
 }

@@ -1,5 +1,6 @@
 package com.findpet.wpet.pet.domain;
 
+import com.findpet.wpet.common.domain.ModifiableEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -9,14 +10,14 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "petno", callSuper = false)
 @Table(name = "PET")
 @Entity
-public class Pet {
+public class Pet extends ModifiableEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "pet_no")
     private Long petno;
 
     @Embedded
-    private PetName petName;
+    private PetCategory petCategory;
 
     @Embedded
     private PetAge petAge;
@@ -25,5 +26,51 @@ public class Pet {
     private PetGender petGender;
 
     @Embedded
-    private PetCategory petCategory;
+    private PetName petName;
+
+    public Pet(final PetCategoryType petCategoryType,
+               final Integer petAge,
+               final PetGenderType petGenderType,
+               final String petName) {
+        this.petCategory = new PetCategory(petCategoryType);
+        this.petAge = new PetAge(petAge);
+        this.petGender = new PetGender(petGenderType);
+        this.petName = new PetName(petName);
+    }
+
+    public Long getPetno() {
+        return petno;
+    }
+
+    public String getPetName() {
+        return petName.getName();
+    }
+
+    public PetCategoryType getPetCategory() {
+        return petCategory.getPetCategoryType();
+    }
+
+    public Integer getPetAge() {
+        return petAge.getAge();
+    }
+
+    public PetGenderType getPetGender() {
+        return petGender.getGenderType();
+    }
+
+    public void updatePetAge(final Integer age) {
+        this.petAge = new PetAge(age);
+    }
+
+    public void updatePetGender(final PetGenderType GenderType) {
+        this.petGender = new PetGender(GenderType);
+    }
+
+    public void updatePetName(final String name) {
+        this.petName = new PetName(name);
+    }
+
+    public void updatePetCategory(final PetCategoryType petCategoryType) {
+        this.petCategory = new PetCategory(petCategoryType);
+    }
 }

@@ -19,13 +19,13 @@ public class PetResponseDto {
 
     public PetResponseDto(final Long id,
                           final PetCategoryType categoryType,
-                          final PetAge petAge,
+                          final Integer petAge,
                           final PetGenderType genderType,
                           final String name) {
 
         this.petId = id;
         this.petCategoryType = categoryType;
-        this.petAge = petAge.getAge();
+        this.petAge = petAge;
         this.petGenderType = genderType;
         this.petName = name;
     }
