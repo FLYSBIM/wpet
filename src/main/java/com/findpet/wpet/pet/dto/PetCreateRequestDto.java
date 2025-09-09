@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class PetCreateRequestDto {
+public class PetCreateRequestDto implements PetRequestDto{
 
     private String name;
     private Integer age;

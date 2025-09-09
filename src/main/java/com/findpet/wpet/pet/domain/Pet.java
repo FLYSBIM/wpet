@@ -7,14 +7,14 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@EqualsAndHashCode(of = "petno", callSuper = false)
+@EqualsAndHashCode(of = "petId", callSuper = false)
 @Table(name = "PET")
 @Entity
 public class Pet extends ModifiableEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pet_no")
-    private Long petno;
+    @Column(name = "pet_id")
+    private Long petId;
 
     @Embedded
     private PetCategory petCategory;
@@ -38,8 +38,8 @@ public class Pet extends ModifiableEntity {
         this.petName = new PetName(petName);
     }
 
-    public Long getPetno() {
-        return petno;
+    public Long getPetId() {
+        return petId;
     }
 
     public String getPetName() {

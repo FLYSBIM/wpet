@@ -101,7 +101,6 @@ public class PetCRUDService {
     }
 
     private PetResponseDto mapPetResponseDto(final Pet pet){
-        return new PetResponseDto(pet.getPetno(),pet.getPetCategory(),pet.getPetAge(),pet.getPetGender(),pet.getPetName());
+        return new PetResponseDto(pet.getPetId(),pet.getPetCategory(),pet.getPetAge(),pet.getPetGender(),pet.getPetName());
     }
-
 }

@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class PetUpdateData {
+
     private String updateName;
     private PetCategoryType updateCategory;
     private PetGenderType updateGender;
