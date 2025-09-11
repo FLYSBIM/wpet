@@ -1,16 +1,14 @@
 package com.findpet.wpet.pet.presentation;
 
 import com.findpet.wpet.pet.application.PetCRUDService;
-import com.findpet.wpet.pet.domain.Pet;
 import com.findpet.wpet.pet.dto.PetCreateRequestDto;
 import com.findpet.wpet.pet.dto.PetUpdateRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/pets")
 public class PetCRUDController {
 
     PetCRUDService petCRUDService;
@@ -20,22 +18,22 @@ public class PetCRUDController {
         this.petCRUDService = petCRUDService;
     }
 
-    @PostMapping("/pets")
+    @PostMapping("")
     public ResponseEntity createPet(@RequestBody final PetCreateRequestDto petCreateRequestDto) {
         return ResponseEntity.ok(petCRUDService.createPet(petCreateRequestDto));
     }
 
-    @GetMapping("/pets/{petId}")
+    @GetMapping("/{petId}")
     public ResponseEntity getPet(@PathVariable final Long petId) {
         return ResponseEntity.ok(petCRUDService.selectPet(petId));
     }
 
-    @PutMapping("/pets")
+    @PutMapping("")
     public ResponseEntity updatePet(@RequestBody final PetUpdateRequestDto petUpdateRequestDto) {
         return ResponseEntity.ok(petCRUDService.updatePet(petUpdateRequestDto));
     }
 
-    @DeleteMapping("/pets/{petId}")
+    @DeleteMapping("/{petId}")
     public ResponseEntity deletePet(@PathVariable final Long petId) {
         return ResponseEntity.ok(petCRUDService.deletePet(petId));
     }
