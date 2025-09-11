@@ -11,20 +11,10 @@ import lombok.NoArgsConstructor;
 @Embeddable
 public class PetName {
 
-    @Column(name = "pet_name", updatable = true)
+    @Column(name = "pet_name")
     private String name;
 
     public PetName(final String petName) {
-        validatePetName(petName);
         this.name = petName;
-    }
-
-    private void validatePetName(final String petName) {
-        if(petName == null || petName.isBlank()) {
-            throw new IllegalArgumentException("Pet name cannot be null or empty");
-        }
-        if(petName.length() > 100){
-            throw new IllegalArgumentException("Pet name is too long");
-        }
     }
 }

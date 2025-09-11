@@ -4,5 +4,6 @@ public enum PetGenderType {
 
     MALE,
     FEMALE,
+    NEUTERED,
     UNKNOWN;
 }
