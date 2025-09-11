@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #0056b3;
+}
+
+/* 목록 관련 스타일(.list-container)이 제거되어 .form-container만 남았습니다. */
+.form-container {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* select 태그 스타일을 추가하여 다른 input과 디자인을 통일합니다. */
+input[type="text"], input[type="number"], select {
+    width: 100%; /* 너비를 100%로 통일하여 계산식을 단순화합니다. */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* padding과 border가 너비에 포함되도록 설정합니다. */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* #pet-list,
+  #pet-list li,
+  .pet-info,
+  .delete-btn 등
+  목록과 관련된 모든 스타일을 여기서 삭제했습니다.
+*/

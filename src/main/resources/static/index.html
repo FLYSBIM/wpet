@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WPet - 반려동물 관리</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>반려동물 관리 시스템</h1>
+
+  <div class="form-container">
+    <h2>새 반려동물 등록</h2>
+    <form id="add-pet-form">
+      <input type="text" id="petName" placeholder="이름" required>
+      <input type="number" id="petAge" placeholder="나이" required>
+
+      <select id="petCategory" required>
+        <option value="" disabled selected>-- 종을 선택하세요 --</option>
+        <option value="DOG">강아지</option>
+        <option value="CAT">고양이</option>
+        <option value="BIRD">새</option>
+      </select>
+
+      <select id="petGender" required>
+        <option value="" disabled selected>-- 성별을 선택하세요 --</option>
+        <option value="MALE">수컷</option>
+        <option value="FEMALE">암컷</option>
+        <option value="NEUTERED">중성</option>
+      </select>
+
+      <button type="submit">등록하기</button>
+    </form>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
