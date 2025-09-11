@@ -2,7 +2,6 @@ package com.findpet.wpet.pet.dto;
 
 import com.findpet.wpet.pet.domain.PetAge;
 import com.findpet.wpet.pet.domain.PetCategoryType;
-import com.findpet.wpet.pet.domain.PetGender;
 import com.findpet.wpet.pet.domain.PetGenderType;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -27,5 +26,4 @@ public class PetCreateRequestDto implements PetRequestDto{
         this.name = name;
         this.genderType = genderType;
     }
-
 }
