@@ -28,6 +28,12 @@ public class PetCRUDController {
         return ResponseEntity.ok(petCRUDService.selectPet(petId));
     }
 
+    @GetMapping("")
+    public ResponseEntity getAllPets(@RequestParam(value = "page", defaultValue = "0") int page,
+                                     @RequestParam(value = "num", defaultValue = "10") int num){
+        return ResponseEntity.ok(petCRUDService.selectPagePets(page, num));
+    }
+
     @PutMapping("")
     public ResponseEntity updatePet(@RequestBody final PetUpdateRequestDto petUpdateRequestDto) {
         return ResponseEntity.ok(petCRUDService.updatePet(petUpdateRequestDto));
